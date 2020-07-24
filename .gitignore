@@ -21,8 +21,11 @@
 *.a
 *.la
 *.lo
-*.html
-*.build
+
+#directories
+/[Hh]tml/
+/[Bb]uild/
+
 
 # Shared objects (inc. Windows DLLs)
 *.dll
