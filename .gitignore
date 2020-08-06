@@ -24,8 +24,7 @@
 
 #directories
 /[Hh]tml/
-/[Bb]uild/**
-
+/[Bb]uild/*
 
 # Shared objects (inc. Windows DLLs)
 *.dll
