@@ -133,24 +133,6 @@ void test_Read_Leds_Port_State(){
 
 
 
-
-
-void test_apagar_todos_los_leds(void){
-
- LedsTurnAllOff();
-
- UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((virtuales)), (
-
-((void *)0)
-
-), (UNITY_UINT)(75), UNITY_DISPLAY_STYLE_HEX16);
-
-}
-
-
-
-
-
 void test_encender_todos_los_leds(void){
 
  LedsTurnAllOn();
@@ -159,9 +141,31 @@ void test_encender_todos_los_leds(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(81), UNITY_DISPLAY_STYLE_INT);
+), (UNITY_UINT)(74), UNITY_DISPLAY_STYLE_INT);
 
 }
+
+
+
+
+
+void test_apagar_todos_los_leds(void){
+
+ LedsTurnAllOn();
+
+ LedsTurnAllOff();
+
+ UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((virtuales)), (
+
+((void *)0)
+
+), (UNITY_UINT)(81), UNITY_DISPLAY_STYLE_HEX16);
+
+}
+
+
+
+
 
 
 
@@ -177,7 +181,7 @@ void test_encender_los_leds_de_los_extremos(void){
 
   ((void *)0)
 
-  ), (UNITY_UINT)(88), UNITY_DISPLAY_STYLE_INT);
+  ), (UNITY_UINT)(90), UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -197,7 +201,7 @@ void test_apagar_los_leds_de_los_extremos(void){
 
   ((void *)0)
 
-  ), (UNITY_UINT)(96), UNITY_DISPLAY_STYLE_HEX16);
+  ), (UNITY_UINT)(98), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -211,19 +215,19 @@ void test_encendido_valor_fuera_de_rango(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(101), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(103), UNITY_DISPLAY_STYLE_HEX16);
 
  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((LedsTurnOn(0))), (
 
 ((void *)0)
 
-), (UNITY_UINT)(102), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(104), UNITY_DISPLAY_STYLE_HEX16);
 
  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0x00)), (UNITY_INT)(UNITY_INT16)((virtuales)), (
 
 ((void *)0)
 
-), (UNITY_UINT)(103), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(105), UNITY_DISPLAY_STYLE_HEX16);
 
 }
 
@@ -239,18 +243,18 @@ void test_apagado_valor_fuera_de_rango(void){
 
 ((void *)0)
 
-), (UNITY_UINT)(109), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(111), UNITY_DISPLAY_STYLE_HEX16);
 
- UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((LedsTurnOn(-15))), (
+ UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((LedsTurnOff(-15))), (
 
 ((void *)0)
 
-), (UNITY_UINT)(110), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(112), UNITY_DISPLAY_STYLE_HEX16);
 
  UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0xFFFF)), (UNITY_INT)(UNITY_INT16)((virtuales)), (
 
 ((void *)0)
 
-), (UNITY_UINT)(111), UNITY_DISPLAY_STYLE_HEX16);
+), (UNITY_UINT)(113), UNITY_DISPLAY_STYLE_HEX16);
 
 }

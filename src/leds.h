@@ -1,5 +1,9 @@
 #include"stdbool.h"
 
+#define FIRST_GPIO 1
+#define LAST_GPIO 16
+#define TRUE 1
+#define FALSE 0
 /**
  *  Inicializacion de la biblioteca y apagado de los leds del puerto.
  *  La biblioteca funciona mediante la asociacion de un bloque de memoria de

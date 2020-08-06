@@ -37,22 +37,36 @@ void LedsCreate(int * direccion){
 	*puerto =LEDS_ALL_OFF;
 }
 
-bool LedsTurnOn(int led){
-	bool val=0;
-	if((1<=led)&&(16>=led)){
-		*puerto |=BitMask(LedToBit(led));
-		val=1;
+bool Address_Check(int led){
+	bool retorno=FALSE;
+	if((FIRST_GPIO<=led)&&(LAST_GPIO>=led)){
+		retorno=TRUE;	
 	}
-	return val;
+	return retorno;
+}
+
+int Assign_Port(int led){
+	int retorno;	
+	retorno=BitMask(LedToBit(led));	
+	return retorno;
+}
+
+bool LedsTurnOn(int led){
+	bool retorno=FALSE;
+	if(Address_Check(led)){
+		*puerto |=Assign_Port(led);
+		retorno=TRUE;
+	}
+	return retorno;
 }
 
 bool LedsTurnOff(int led){
-	bool val=0;
-	if((1<=led)&&(16>=led)){
-		*puerto &=~BitMask(LedToBit(led));
-			val=1;
-		}
-	return val;
+	bool retorno=FALSE;
+	if(Address_Check(led)){
+		*puerto &=~Assign_Port(led);
+		retorno=TRUE;
+	}
+	return retorno;
 }
 
 void LedsTurnAllOff(void){
@@ -65,12 +79,12 @@ void LedsTurnAllOn(void){
 
 bool LedState(int led){
 	uint32_t val;
-	bool value;
+	bool retorno;
 
-	val=*puerto&BitMask(LedToBit(led));
-	value= val>>(led-1);
+	val=*puerto&Assign_Port(led);
+	retorno= val;
 
-	return value;
+	return retorno;
 }
 
 

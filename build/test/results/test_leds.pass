@@ -23,28 +23,28 @@
   :line: 60
   :message: ''
   :unity_test_time: 0
-- :test: test_apagar_todos_los_leds
-  :line: 73
+- :test: test_encender_todos_los_leds
+  :line: 72
   :message: ''
   :unity_test_time: 0
-- :test: test_encender_todos_los_leds
-  :line: 79
+- :test: test_apagar_todos_los_leds
+  :line: 78
   :message: ''
   :unity_test_time: 0
 - :test: test_encender_los_leds_de_los_extremos
-  :line: 85
+  :line: 87
   :message: ''
   :unity_test_time: 0
 - :test: test_apagar_los_leds_de_los_extremos
-  :line: 92
+  :line: 94
   :message: ''
   :unity_test_time: 0
 - :test: test_encendido_valor_fuera_de_rango
-  :line: 100
+  :line: 102
   :message: ''
   :unity_test_time: 0
 - :test: test_apagado_valor_fuera_de_rango
-  :line: 107
+  :line: 109
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -55,4 +55,4 @@
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0027632940000330564
+:time: 0.0024757770001997415

@@ -15,8 +15,8 @@ extern void test_encender_un_led(void);
 extern void test_encender_un_led_y_apagar_un_led(void);
 extern void test_encender_y_apagar_varios_leds(void);
 extern void test_Read_Leds_Port_State();
-extern void test_apagar_todos_los_leds(void);
 extern void test_encender_todos_los_leds(void);
+extern void test_apagar_todos_los_leds(void);
 extern void test_encender_los_leds_de_los_extremos(void);
 extern void test_apagar_los_leds_de_los_extremos(void);
 extern void test_encendido_valor_fuera_de_rango(void);
@@ -93,12 +93,12 @@ int main(void)
   run_test(test_encender_un_led_y_apagar_un_led, "test_encender_un_led_y_apagar_un_led", 45);
   run_test(test_encender_y_apagar_varios_leds, "test_encender_y_apagar_varios_leds", 52);
   run_test(test_Read_Leds_Port_State, "test_Read_Leds_Port_State", 60);
-  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 73);
-  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 79);
-  run_test(test_encender_los_leds_de_los_extremos, "test_encender_los_leds_de_los_extremos", 85);
-  run_test(test_apagar_los_leds_de_los_extremos, "test_apagar_los_leds_de_los_extremos", 92);
-  run_test(test_encendido_valor_fuera_de_rango, "test_encendido_valor_fuera_de_rango", 100);
-  run_test(test_apagado_valor_fuera_de_rango, "test_apagado_valor_fuera_de_rango", 107);
+  run_test(test_encender_todos_los_leds, "test_encender_todos_los_leds", 72);
+  run_test(test_apagar_todos_los_leds, "test_apagar_todos_los_leds", 78);
+  run_test(test_encender_los_leds_de_los_extremos, "test_encender_los_leds_de_los_extremos", 87);
+  run_test(test_apagar_los_leds_de_los_extremos, "test_apagar_los_leds_de_los_extremos", 94);
+  run_test(test_encendido_valor_fuera_de_rango, "test_encendido_valor_fuera_de_rango", 102);
+  run_test(test_apagado_valor_fuera_de_rango, "test_apagado_valor_fuera_de_rango", 109);
 
   return UnityEnd();
 }

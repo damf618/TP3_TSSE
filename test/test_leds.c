@@ -68,18 +68,20 @@ void test_Read_Leds_Port_State(){
    TEST_ASSERT_EQUAL_HEX16(0, LedState(13));
 }
 
-
-//! @test apagar todos los leds
-void test_apagar_todos_los_leds(void){
-	LedsTurnAllOff();
-	TEST_ASSERT_EQUAL_HEX16(0, virtuales);
-}
-
 //! @test encender todos los leds
 void test_encender_todos_los_leds(void){
 	LedsTurnAllOn();
 	TEST_ASSERT_EQUAL(0xFFFF, virtuales);
 }
+
+//! @test apagar todos los leds
+void test_apagar_todos_los_leds(void){
+	LedsTurnAllOn();
+	LedsTurnAllOff();
+	TEST_ASSERT_EQUAL_HEX16(0, virtuales);
+}
+
+
 
 //! @test prueba de encendido de leds de bordes
 void test_encender_los_leds_de_los_extremos(void){
@@ -107,6 +109,6 @@ void test_encendido_valor_fuera_de_rango(void){
 void test_apagado_valor_fuera_de_rango(void){
 	LedsTurnAllOn();
 	TEST_ASSERT_EQUAL_HEX16(0, LedsTurnOff(25));
-	TEST_ASSERT_EQUAL_HEX16(0, LedsTurnOn(-15));
+	TEST_ASSERT_EQUAL_HEX16(0, LedsTurnOff(-15));
 	TEST_ASSERT_EQUAL_HEX16(0xFFFF, virtuales);
 }
